@@ -8,6 +8,9 @@ def get_topic(topic_id):
         """, [topic_id])
         result = cursor.fetchone()
 
+        if not result:
+            raise Exception("topic/not_found")
+
     return {
         'id': result['id'],
         'name': result['name'],
