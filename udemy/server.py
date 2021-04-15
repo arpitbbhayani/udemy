@@ -1,11 +1,10 @@
 from flask import Flask, jsonify
-from udemy.db import connection
+from udemy.services.topics import get_topic
 
 app = Flask(__name__)
 
 
-@app.route("/")
-def view_index():
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT 1")
-    return jsonify({})
+@app.route("/topics/<topic_id>")
+def view_topics_get(topic_id):
+    topic = get_topic(topic_id)
+    return jsonify(topic)

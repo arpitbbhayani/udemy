@@ -12,3 +12,5 @@ connection = pymysql.connect(host=MYSQL_DATABASE_HOST,
                              password=MYSQL_DATABASE_PASSWORD,
                              database=MYSQL_DATABASE_DB,
                              cursorclass=pymysql.cursors.DictCursor)
+
+connection.connect()
