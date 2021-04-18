@@ -21,3 +21,5 @@ SELECT CONCAT("topic-", subcategory_id, counter_id), subcategory_id, 3 FROM (
         (SELECT id from counters LIMIT 1000) counters
     )
 ) t;
+
+UPDATE topics SET score = RAND();
